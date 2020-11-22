@@ -108,14 +108,14 @@ void AccionBotones(int estado_boton)
         }
         else if(g_home == MOTOR_MENU)
         {
-            if(g_selected_motor == MOTOR1) g_duty_1++;
-            else if(g_selected_motor == MOTOR2) g_duty_2++;
-            else if(g_selected_motor == MOTOR3) g_duty_3++;
-            else if(g_selected_motor == MOTOR4) g_duty_4++;
-            if(g_duty_1 >= 6)g_duty_1 = 0;
-            if(g_duty_2 >= 6)g_duty_2 = 0;
-            if(g_duty_3 >= 6)g_duty_3 = 0;
-            if(g_duty_4 >= 6)g_duty_4 = 0;
+            if(g_selected_motor == MOTOR1) g_duty_1+=51;
+            else if(g_selected_motor == MOTOR2) g_duty_2+=51;
+            else if(g_selected_motor == MOTOR3) g_duty_3+=51;
+            else if(g_selected_motor == MOTOR4) g_duty_4+=51;
+            if(g_duty_1 > 255)g_duty_1 = 0;
+            if(g_duty_2 > 255)g_duty_2 = 0;
+            if(g_duty_3 > 255)g_duty_3 = 0;
+            if(g_duty_4 > 255)g_duty_4 = 0;
         }
         break;
     case 4: //minus
@@ -126,14 +126,14 @@ void AccionBotones(int estado_boton)
         }
         else if(g_home == MOTOR_MENU)
         {
-            if(g_selected_motor == MOTOR1) g_duty_1--;
-            else if(g_selected_motor == MOTOR2) g_duty_2--;
-            else if(g_selected_motor == MOTOR3) g_duty_3--;
-            else if(g_selected_motor == MOTOR4) g_duty_4--;
-            if(g_duty_1 <= 0)g_duty_1 = 5;
-            if(g_duty_2 <= 0)g_duty_2 = 5;
-            if(g_duty_3 <= 0)g_duty_3 = 5;
-            if(g_duty_4 <= 0)g_duty_4 = 5;
+            if(g_selected_motor == MOTOR1) g_duty_1-=51;
+            else if(g_selected_motor == MOTOR2) g_duty_2-=51;
+            else if(g_selected_motor == MOTOR3) g_duty_3-=51;
+            else if(g_selected_motor == MOTOR4) g_duty_4-=51;
+            if(g_duty_1 < 0)g_duty_1 = 5;
+            if(g_duty_2 < 0)g_duty_2 = 5;
+            if(g_duty_3 < 0)g_duty_3 = 5;
+            if(g_duty_4 < 0)g_duty_4 = 5;
         }
         break;
     default:

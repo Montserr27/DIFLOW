@@ -144,13 +144,13 @@ void DisplaySpeed(void)
 {
     display.setTextSize(3);
     display.setCursor(6,21);
-    display.println(g_duty_1);
+    display.println(g_duty_1/51);
     display.setCursor(40,21);
-    display.println(g_duty_2);
+    display.println(g_duty_2/51);
     display.setCursor(72,21);
-    display.println(g_duty_3);
+    display.println(g_duty_3/51);
     display.setCursor(105,21);
-    display.println(g_duty_4);
+    display.println(g_duty_4/51);
 }
 
 void DrawConfitmationLine(void)
